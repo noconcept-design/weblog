@@ -13,6 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
+
+Route::name('homepage')->get('/', 'PageController@homepage');
+
+Route::name('project.index')->get('projects', 'ProjectController@index');
+Route::name('project.show')->get('projects/{slug}', 'ProjectController@show');
+
+Route::name('contributor.index')->get('contributors', 'ContributorController@index');
+Route::name('contributor.show')->get('contributors/{slug}', 'ContributorController@show');
